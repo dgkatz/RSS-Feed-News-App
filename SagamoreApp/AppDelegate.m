@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "SLPagingViewController.h"
+#import "UIColor+SLAddition.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +17,50 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    UIColor *red = [UIColor colorWithRed:255/255
+                                      green:0.0/255
+                                       blue:0.0/255
+                                      alpha:1.0];
+    
+    UIColor *gray = [UIColor colorWithRed:.84
+                                    green:.84
+                                     blue:.84
+                                    alpha:1.0];
+    
+    SLPagingViewController *pageViewController  = self.window.rootViewController.childViewControllers.firstObject;
+    pageViewController.navigationSideItemsStyle = SLNavigationSideItemsStyleClose;
+    [pageViewController setCurrentIndex:0
+                               animated:NO];
+    float minX                                  = 45.0;
+    // Tinder Like
+    pageViewController.pagingViewMoving = ^(NSArray *subviews){
+        float mid  = [UIScreen mainScreen].bounds.size.width/2 - minX;
+        float midM = [UIScreen mainScreen].bounds.size.width - minX;
+        for(UIImageView *v in subviews){
+            UIColor *c = gray;
+            if(v.frame.origin.x > minX
+               && v.frame.origin.x < mid)
+                // Left part
+                c = [UIColor gradient:v.frame.origin.x
+                                  top:minX+1
+                               bottom:mid-1
+                                 init:red
+                                 goal:gray];
+            else if(v.frame.origin.x > mid
+                    && v.frame.origin.x < midM)
+                // Right part
+                c = [UIColor gradient:v.frame.origin.x
+                                  top:mid+1
+                               bottom:midM-1
+                                 init:gray
+                                 goal:red];
+            else if(v.frame.origin.x == mid)
+                c = red;
+            v.tintColor= c;
+        }
+    };
+
     // Override point for customization after application launch.
     return YES;
 }
