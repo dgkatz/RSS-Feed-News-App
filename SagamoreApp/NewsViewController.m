@@ -173,6 +173,10 @@
                     imgSrc = imgUrl;
                 }
             }
+            else{
+                imageView.image = nil;
+                imageView.backgroundColor = [UIColor grayColor];
+            }
         }
         
     }

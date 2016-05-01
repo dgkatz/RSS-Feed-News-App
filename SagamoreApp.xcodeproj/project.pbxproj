@@ -912,6 +912,7 @@
 				65C27BA51CD2B7620096D9BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65C27BA61CD2B7620096D9BE /* Build configuration list for PBXNativeTarget "SagamoreAppTests" */ = {
 			isa = XCConfigurationList;
@@ -920,6 +921,7 @@
 				65C27BA81CD2B7620096D9BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65C27BA91CD2B7620096D9BE /* Build configuration list for PBXNativeTarget "SagamoreAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -928,6 +930,7 @@
 				65C27BAB1CD2B7620096D9BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

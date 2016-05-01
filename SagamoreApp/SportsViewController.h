@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MWFeedParser.h"
 #import "NSString+HTML.h"
+#import "dataClass.h"
 #import "GTMNSString+HTML.h"
 @interface SportsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

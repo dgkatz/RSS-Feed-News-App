@@ -7,7 +7,6 @@
 //
 
 #import "OpinionsViewController.h"
-
 @interface OpinionsViewController (){
     MWFeedParser *feedParser;
     NSMutableArray *parsedItems;
@@ -49,7 +48,7 @@
     
     parsedItems = [[NSMutableArray alloc]init];
     
-    NSURL *feedURL = [NSURL URLWithString:@"http://thesagonline.com/category/news/feed"];
+    NSURL *feedURL = [NSURL URLWithString:@"http://thesagonline.com/category/opinions/feed"];
     feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
     feedParser.delegate = self;
     feedParser.feedParseType = ParseTypeFull;
@@ -146,6 +145,42 @@
         NSString *itemAuthor = item.author ? [item.author stringByConvertingHTMLToPlainText] : @"[No Author]";
         authorLabel.text = itemAuthor;
         
+        
+        
+//        HTMLParser *parser = [[HTMLParser alloc] initWithString:item.summary error:nil];
+//        HTMLNode *bodyNode = [parser body];
+//        NSString *string_url;
+//        NSArray *inputNodes = [bodyNode findChildTags:@"img"];
+//        
+//        ////NSLog(@%@", inputNodes); //Answer to first question
+//        
+//        int i=0;
+//        for (HTMLNode *inputNode in inputNodes) {
+//            
+//            if(i==0){
+//                string_url= [inputNode getAttributeNamed:@"src"]; //Answer to first question
+//                i++;
+//            }
+//            
+//        }
+//        imageView.image = nil;
+//        dispatch_async(dispatch_get_global_queue(0,0), ^{
+//            
+//            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:string_url]];
+//            if ( data == nil )
+//                return;
+//            imageView.image = nil;
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                if(cell.tag == indexPath.row) {
+//                    imageView.image = [UIImage imageWithData: data];
+//                }
+//                // WARNING: is the cell still using the same data by this point??
+//            });
+//        });
+        
+        
+        
+        
         NSString *htmlContent = item.content;
         NSString *imgSrc;
         
@@ -178,6 +213,11 @@
                     imgSrc = imgUrl;
                 }
             }
+            else{
+                imageView.image = nil;
+                imageView.backgroundColor = [UIColor grayColor];
+            }
+
         }
         
     }

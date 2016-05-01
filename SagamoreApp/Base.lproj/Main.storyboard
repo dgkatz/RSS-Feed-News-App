@@ -294,7 +294,7 @@
                                                         <constraint firstAttribute="width" secondItem="d6L-mV-r2m" secondAttribute="height" multiplier="133:117" id="bF9-Ju-iAd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets are coming from hell" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifj-ek-eXq">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets are coming from hell" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifj-ek-eXq">
                                                     <rect key="frame" x="141" y="8" width="171" height="72"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -523,6 +523,6 @@
         <image name="ironman.jpg" width="1256" height="833"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Miz-fA-ycy"/>
+        <segue reference="kvr-m6-ree"/>
     </inferredMetricsTieBreakers>
 </document>
